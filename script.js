@@ -116,18 +116,18 @@ function UpdateScore() {
     ScoreDiv.innerHTML = `Score: ${score+=1}`;
 }
 
-// Mostra o botão restart ao receber gameover 
-function showRestart() {
-    let restartButton = document.getElementById("restart-button");
-    restartButton.style.transform = "scale(1)";
-
-}
-
 // Função de esconder o botão restart e reiniciar o jogo
 function restart() {
     let restartButton = document.getElementById("restart-button");
     restartButton.style.transform = "scale(0)";
+    score = 0;
     game=setInterval(gameloop, 100);
+}
+
+// Mostra o botão restart ao receber gameover 
+function showRestart() {
+    let restartButton = document.getElementById("restart-button");
+    restartButton.style.transform = "scale(1)";
 }
 
 // função de atualizar a posição da cobra
