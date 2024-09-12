@@ -1,0 +1,87 @@
+body {
+    display: flex; /*torna display flexivel*/
+    align-items: center; /* Esse e o de baixo alinham o corpo ao centro*/
+    justify-content: center;
+    height: 100vh; /*Preenche 100% da altura da tela*/
+    margin: 0;
+    flex-direction: column;
+    background-color: gray;
+}
+
+canvas {
+    background-color: rgb(97, 155, 10);
+    border: 2px solid white;
+    margin-top: 1vh;
+}
+
+.score {
+    font-size: 24px; /* Tamanho da fonte para o score */
+    color: white; /* Cor do texto */
+    margin-bottom: 20px; /* Espaço entre o score e o canvas */
+    text-align: center; /* Centraliza o texto */
+}
+
+.gamespace {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.controls-section {
+    display: grid; /*define os elementos em formato de grade*/
+    grid-template-columns: 1fr 1fr 1fr; /*Dimensoes da grade 3x3*/
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 5px; /*Espaço entre os botões*/
+    justify-items: center; /* Centraliza itens horizontalmente*/
+    align-items: center; /*Centraliza itens verticalmente*/
+    width: 200px;
+    margin: auto; /*Centraliza a seção*/
+}
+
+button {
+    background-color: rgb(193, 181, 181);
+    padding: 1.2em;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.verticalButton {
+    grid-column: 2;
+}
+
+.horizontalButton:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.horizontalButton:nth-child(3) {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.verticalButton:nth-child(4) {
+    grid-row: 3;
+}
+
+.restart-button {
+    transform: scale(0);
+    margin-bottom: -10vh;
+}
+
+@media (max-width: 480px) {
+    canvas {
+        width: 300px;
+        height: 300px;
+    }
+
+    .controls-section {
+        gap: 3px; /* Reduz o espaçamento entre os botões */
+        width: 150px; /* Reduz o tamanho da seção de controle */
+    }
+
+    .controls-section button {
+        padding: 100%em; /* Diminui o tamanho dos botões */
+        font-size: 0.9em; /* Diminui o tamanho da fonte */
+    }
+}
